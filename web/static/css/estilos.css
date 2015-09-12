@@ -1,0 +1,165 @@
+.Header-imagecontainer{
+	position: relative;
+	display: inline-block;
+	min-width: 425px;
+	margin-left:0em;
+	margin-right:0em;
+}
+a{
+	color: #11E1E1;
+	text-decoration: none;
+}
+
+.Header{
+	background-image:#002DB2;
+	background-position: center;
+        background-size: cover;
+	height: 300px;
+	margin-top: 2.75em;
+	padding: 1.2em ;
+	text-align: center;
+}
+
+
+.Header-name,.Header-link{
+	color:white;
+}
+
+.Header-image{
+	border-radius: 100%;
+	border: 5px solid white;
+	background-position: before;
+}
+
+.MainMenu{
+	background: #333333;
+	height: 3.75em;
+	left: 0;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	z-index:1;/*define prioridades en la pagina*/
+}
+
+.MainMenu-list{
+	margin: 10px;
+	padding: 0;
+}
+
+.MainMenu-item{
+	background:white;
+	border-radius: 25%;
+	display: inline-block;
+	margin-bottom: 7px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+.Header-name{
+	font-size: 1.1em;
+	font-weight: lighter;
+	margin: 0
+}
+
+.Header-link{
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.MainMenu-link{
+	text-decoration: none;
+	}
+
+.Profile-title, .Work-title{
+	border-bottom:1px dashed;
+	color: white;
+	margin-top: 0;
+	padding-bottom: .5em;
+	text-align: center;
+}
+
+.Profile, .Work{
+	background: black;
+	color: white;
+}
+
+.Profile{
+	text-align: center;
+}
+
+.Profile-link{
+	border-radius: 2em;
+	color: white;
+	display: inline-block;
+	padding: .5em 1em;
+	text-decoration: none;
+}
+
+.Profile-link1{
+	background: #327CBE;
+}	
+
+.Profile-link2{
+	background: #002DB2;
+}	
+
+.Profile-link3{
+	background: #FF8000;
+}	
+
+.Work-title{
+	padding-top: 2em;
+	text-align: center;
+}
+
+.Work-item{
+	display: inline-block;
+	margin-right: 4em;
+	margin-bottom: 2em;
+}
+
+.Work-imageContainer{
+	height: 200px;
+	position: relative;
+	text-align: center;
+}
+.Footer{
+	background: #304FFE;
+	text-align: center;	
+}
+
+.Footer-left{
+	display: inline-block;
+	vertical-align: top;
+	max-width: 32em;
+}
+.Footer-form{
+	display: inline-block; /*todos los elementos que tengan display:block se pueden centrar con margin*/
+	text-align: center;
+	padding-top: 2em;
+}
+
+.Footer-title{
+	color: white;
+}
+
+.Footer-formInput, .Footer-textArea{
+	display: block;
+	border-radius: 2em;
+	border: none;
+	padding: .5em;
+	text-align: left;
+	margin: 0 auto 1em;
+	color: black;
+}
+.Footer-button{
+	background: #304FFE;
+	color:white;
+	border-radius: 3em;
+	text-align: center;
+	display: inline-block;
+	margin: 0 auto;
+}

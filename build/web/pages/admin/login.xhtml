@@ -13,7 +13,7 @@
         <header id="menu" class="Header">
             <nav class="MainMenu">
                 <ul class="MainMenu-list">
-                    <a jsf:outcome="../../index.xhtml"><button type="submit" class="Footer-button" onclick="true">Inicio</button></a>
+                    <a jsf:outcome="/VetAnimals"><button type="submit" class="Footer-button" onclick="">Inicio</button></a>
                     <a jsf:outcome="/../pages/registro.xhtml"><button type="submit" class="Footer-button" onclick="">Registrarse</button></a>
                     <a href="#contacto"><button type="submit" class="Footer-button" onclick="">Iniciar Sesion</button></a>
                     <a jsf:outcome="../index.xhtml"><button type="submit" class="Footer-button" onclick="">Ayuda y Soporte</button></a>
@@ -22,7 +22,7 @@
             <figure class="Header-imagecontainer">
                 <img class="Header-image" src="../../static/images/logo.jpg" alt="Imágen Personal"/>
                 <figcaption class="Header-imageDescription">
-                    <a class="Header-link" onclick="">VetAnimals</a>
+                    <a jsf:outcome="index.xhtml" class="Header-link" onclick="">VetAnimals</a>
                 </figcaption>
                 <p class="Header-name"></p>
             </figure>

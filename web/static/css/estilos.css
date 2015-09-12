@@ -9,6 +9,11 @@ a{
 	color: #11E1E1;
 	text-decoration: none;
 }
+.Cuerpo{
+    background-color:#d7d7d7; 
+    margin: auto; 
+    text-align: center;
+}
 
 .Header{
 	background-image:#002DB2;

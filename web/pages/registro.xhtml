@@ -3,55 +3,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
-        <title>VetAnimals</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="../static/css/estilos.css"/>
-	<link rel="stylesheet" type="text/css" href="../static/css/normalize.css"/>
-    </head>
-    <body style="background-color:#d7d7d7; margin: auto; text-align: center;">
-        <header id="menu" class="Header">
-            <nav class="MainMenu">
-                <ul class="MainMenu-list">
-                    <a jsf:outcome="/index.xhtml"><button type="submit" class="Footer-button" onclick="">Inicio</button></a>
-                    <a jsf:outcome="/pages/registro.xhtml"><button type="submit" class="Footer-button" onclick="">Registrarse</button></a>
-                    <a jsf:outcome="/pages/admin/login.xhtml"><button type="submit" class="Footer-button" onclick="">Iniciar Sesion</button></a>
-                    <a jsf:outcome="/index.xhtml"><button type="submit" class="Footer-button" onclick="">Ayuda y Soporte</button></a>
-                </ul>
-            </nav>
-            <figure class="Header-imagecontainer">
-                <img class="Header-image" src="../static/images/logo.jpg" alt="Imágen Personal"/>
-                <figcaption class="Header-imageDescription">
-                    <a jsf:outcome="/index.xhtml" class="Header-link">VetAnimals</a>
-                </figcaption>
-                <p class="Header-name"></p>
-            </figure>
-        </header>
-        <section>
-            <div id="contacto" class="Footer-left"><h3>FORMULARIO DE REGISTRO</h3>
-                <p class="Footer-description">Ingrese datos veridicos</p>
-                <h:form class="Footer-form">
-                    <input type="text" placeholder="Nombre" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.nombres}"/>
-                    <input type="text" placeholder="Apellidos" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.apellidos}"/>
-                    <input type="tel" placeholder="Telefono" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.telefono}"/>
-                    <input type="text" placeholder="Direccion" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.direccion}"/>
-                    <input type="email" placeholder="Correo Electronico" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.email}"/>
-                    <input type="password" placeholder="Contraseña" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.password}"/>
-                    <input type="password" placeholder="Repetir Contraseña" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.password}"/>
-                    <input type="text" placeholder="Ciudad" class="Footer-formInput" required="true" jsf:value="#{ciudadController.selectedCiudad.nombreCiudad}"/>
-                    <h:selectOneMenu value="#{rolController.selectedRol.nombreRol}">
-                        <f:selectItem itemValue="admin" itemLabel="Administrador"/>
-                        <f:selectItem itemValue="cliente" itemLabel="Cliente"/>
-                        <f:selectItem itemValue="veterinaria" itemLabel="Veterinaria"/>
-                    </h:selectOneMenu>
-                    <button type="submit" class="Footer-button" jsf:actionListener="#{usuarioController.create()}" jsf:action="List">Registrar</button>
-                </h:form>
-            </div>
-        </section>
-        <footer class="Footer">
-            
-        </footer>
-    </body>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:composition template="/template.xhtml">
+        <ui:define name="content">
+            <section>
+                <div id="register" class="Footer-left"><h3>FORMULARIO DE REGISTRO</h3>
+                    <p class="Footer-description">Ingrese datos veridicos</p>
+                    <h:form class="Footer-form">
+                        <input type="text" placeholder="Nombre" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.nombres}"/>
+                        <input type="text" placeholder="Apellidos" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.apellidos}"/>
+                        <input type="tel" placeholder="Telefono" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.telefono}"/>
+                        <input type="text" placeholder="Direccion" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.direccion}"/>
+                        <input type="email" placeholder="Correo Electronico" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.email}"/>
+                        <input type="password" placeholder="Contraseña" class="Footer-formInput" required="true" jsf:value="#{usuarioController.selectedUsuario.password}"/>
+                        <input type="text" placeholder="Ciudad" class="Footer-formInput" required="true" jsf:value="#{ciudadController.selectedCiudad.nombreCiudad}"/>
+                        <h:selectOneMenu value="#{rolController.selectedRol.nombreRol}">
+                            <f:selectItem itemValue="admin" itemLabel="Administrador"/>
+                            <f:selectItem itemValue="cliente" itemLabel="Cliente"/>
+                            <f:selectItem itemValue="veterinaria" itemLabel="Veterinaria"/>
+                        </h:selectOneMenu>
+                        <button type="submit" class="Footer-button" jsf:actionListener="#{usuarioController.create()}" jsf:action="List">Registrar</button>
+                    </h:form>
+                </div>
+            </section>
+        </ui:define>
+    </ui:composition>
 </html>

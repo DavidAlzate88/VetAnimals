@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+
+    <head>
+        <title>VetAnimals</title>
+        <meta http-equiv="content-type"
+              content="text/html; charset=utf-8"/>
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        [endif]-->
+        <link rel="stylesheet" type="text/css" href="#{request.contextPath}/static/css/estilos.css"/>
+    </head>
+    
+    <h:body class="Body">
+        <header class="Header">
+            <div class="menu_bar">
+                <a href="#" class="bt-menu">Menu</a>
+            </div>
+            <nav>
+                <ul>
+                    <li class="Header-imagecontainer"><a jsf:outcome="/index.xhtml" 
+                           class="Header-link">
+                            <img class="Header-image" 
+                                 src="#{request.contextPath}/static/images/logo.jpg" 
+                                 alt="Logo" 
+                                 jsf:outcome="index.xhtml"/>VetAnimals</a></li>
+                    <li><a jsf:outcome="/index.xhtml">Inicio</a></li>
+                    <li><a jsf:outcome="/pages/registro.xhtml">Registrarse</a></li>
+                    <li><a rendered="#{!loginController.authenticated}"
+                           jsf:outcome="/pages/login.xhtml">Iniciar Sesion</a></li>
+                    <li><a rendered="#{loginController.authenticated}"
+                           jsf:action="#{loginController.logout()}">Salir</a></li>
+                    <li><a href="#{request.contextPath}/#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <ui:insert name="content">
+            
+        </ui:insert>
+        <script src="#{request.contextPath}/static/js/jquery.js" type="text/javascript"></script>
+        <script src="#{request.contextPath}/static/js/vetanimals.js" type="text/javascript"/>
+    </h:body>
+</html>

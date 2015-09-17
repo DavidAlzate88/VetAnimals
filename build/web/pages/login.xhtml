@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:composition template="/static/templates/template.xhtml">        
+        <ui:define name="content">
+            <h:panelGroup rendered="#{!loginController.authenticated}">
+                <section>
+                    <div id="login" class="Footer-left"><h3>LOGIN</h3>
+                        <p class="Footer-description">Ingrese su e-mail y contraseña</p>
+                        <form class="Footer-form">
+                            <input type="email" class="Footer-formInput" placeholder="E-Mail" required="true" jsf:value="#{loginController.username}"/>
+                            <input type="password" class="Footer-formInput" placeholder="Contraseña" required="true" jsf:value="#{loginController.password}"/>
+                            <button type="submit" class="Footer-button" jsf:value="#{loginController.login()}">Iniciar Sesion</button>
+                        </form>
+                    </div>
+                </section>
+            </h:panelGroup>
+        </ui:define>
+        <p:messages/>
+    </ui:composition>
+</html>

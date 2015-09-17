@@ -47,11 +47,24 @@
             <role-name>webUser</role-name>
         </auth-constraint>
     </security-constraint>
+    <security-constraint>
+        <display-name>vet-zone</display-name>
+        <web-resource-collection>
+            <web-resource-name>vet-zone</web-resource-name>
+            <description>Zona de veterinarias</description>
+            <url-pattern>/pages/vet/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>webAdmin</role-name>
+            <role-name>webVet</role-name>
+        </auth-constraint>
+    </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>VETANIMALS-realm</realm-name>
+        <realm-name>vetanimals-realm</realm-name>
         <form-login-config>
-            <form-login-page>/pages/admin/login.xhtml</form-login-page>
+            <form-login-page>/pages/login.xhtml</form-login-page>
             <form-error-page>/index.xhtml</form-error-page>
         </form-login-config>
     </login-config>
@@ -62,5 +75,9 @@
     <security-role>
         <description>Usuario Estandar</description>
         <role-name>webUser</role-name>
+    </security-role>
+    <security-role>
+        <description>Usuario Veterinaria</description>
+        <role-name>webVet</role-name>
     </security-role>
 </web-app>

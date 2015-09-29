@@ -4,9 +4,10 @@
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
-    
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
     <ui:composition template="/static/templates/template.xhtml">
         <ui:define name="content">
             <section>
@@ -15,59 +16,60 @@
                     <h3>FORMULARIO DE REGISTRO</h3>
                     <p class="Footer-description">Ingrese sus datos personales</p>
                     <h:form class="Footer-form">
+                        <p:messages/>
                         <input 
                             type="text" 
                             placeholder="Nombre" 
                             class="Footer-formInput" 
                             required="true" 
                             jsf:value="#{usuarioController.selectedUsuario.nombres}"/>
-                        
+
                         <input type="text" 
                                placeholder="Apellidos" 
                                class="Footer-formInput" 
                                required="true" 
                                jsf:value="#{usuarioController.selectedUsuario.apellidos}"/>
-                        
+
                         <select class="Footer-formInput"
                                 size="1"
                                 required="true"
-                                jsf:value="#{usuarioController.selectedUsuario.rol}">
+                                jsf:value="#{usuarioController.idRol}">
                             <f:selectItem itemLabel="Escoja un Rol"/>
                             <f:selectItems value="#{rolController.itemsRol}"
                                            var="rol"
                                            itemLabel="#{rol.nombreRol}"
                                            itemValue="#{rol.idRol}"/>
                         </select>
-                        
+
                         <input type="email" 
                                placeholder="Correo Electronico" 
                                class="Footer-formInput" 
                                required="true" 
                                jsf:value="#{usuarioController.selectedUsuario.email}"/>
-                        
+
                         <input type="password" 
                                placeholder="Contraseña" 
                                class="Footer-formInput" 
                                required="true" 
                                jsf:value="#{usuarioController.selectedUsuario.password}"/>
-                        
+
                         <select class="Footer-formInput"
                                 size="1"
                                 required="true"
-                                jsf:value="#{usuarioController.selectedUsuario.ciudad}">
+                                jsf:value="#{usuarioController.ciudad}">
                             <f:selectItem itemLabel="Seleccione una ciudad"/>
                             <f:selectItems value="#{ciudadController.itemsCiudad}" 
                                            var="ciudad" 
                                            itemLabel="#{ciudad.nombreCiudad}"
                                            itemValue="#{ciudad.idCiudad},#{ciudad.departamento.idDepartamento}"/>
                         </select>  
-                        
+
                         <input type="text"
                                placeholder="Direccion"
                                class="Footer-formInput"
                                required="true"
                                jsf:value="#{usuarioController.selectedUsuario.direccion}"/>
-                        
+
                         <input type="tel" 
                                placeholder="Telefono" 
                                class="Footer-formInput" 
@@ -77,18 +79,22 @@
                         <input type="date" 
                                placeholder="Fecha de Nacimiento" 
                                class="Footer-formInput"                                 
-                               jsf:value="#{usuarioController.selectedUsuario.fechaNac}"/>
-                        
-                        <input type="text"
-                               placeholder="Sexo"
-                               class="Footer-formInput"
-                               required="true"
-                               jsf:value="#{usuarioController.selectedUsuario.sexo}"/>
+                               jsf:value="#{usuarioController.selectedUsuario.fechaNac}">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>
+                        </input>
+                        <select jsf:value="#{usuarioController.selectedUsuario.sexo}"
+                                required="true"
+                                class="Footer-formInput" 
+                                size="1">
+                            <f:selectItem itemLabel="Sexo"/>
+                            <f:selectItem itemLabel="Femenino" itemValue="F"/>
+                            <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                        </select>
                         
                         <button type="submit" 
                                 class="Footer-button" 
                                 jsf:actionListener="#{usuarioController.create}" 
-                                jsf:action="List">Registrar</button>                        
+                                jsf:action="login">Registrar</button>                        
                     </h:form>
                 </div>
             </section>            

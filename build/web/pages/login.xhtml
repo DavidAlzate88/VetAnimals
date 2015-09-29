@@ -12,7 +12,8 @@
                 <section>
                     <div id="login" class="Footer-left"><h3>LOGIN</h3>
                         <p class="Footer-description">Ingrese su e-mail y contraseña</p>
-                        <form class="Footer-form">
+                        <form class="Footer-form" jsf:id="loginForm">
+                            <p:messages/>
                             <input type="email" class="Footer-formInput" placeholder="E-Mail" required="true" jsf:value="#{loginController.username}"/>
                             <input type="password" class="Footer-formInput" placeholder="Contraseña" required="true" jsf:value="#{loginController.password}"/>
                             <button type="submit" class="Footer-button" jsf:value="#{loginController.login()}">Iniciar Sesion</button>
@@ -20,7 +21,6 @@
                     </div>
                 </section>
             </h:panelGroup>
-        </ui:define>
-        <p:messages/>
+        </ui:define>        
     </ui:composition>
 </html>
